@@ -1,0 +1,618 @@
+{
+  "info": {
+    "_postman_id": "5db2555b-c786-45b8-ab06-eb26d41a4876",
+    "name": "ExamFinal_BlogTask",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52068333",
+    "_collection_link": "https://go.postman.co/collection/52068333-5db2555b-c786-45b8-ab06-eb26d41a4876?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Krishna\",\r\n    \"email\": \"krishna1234@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kpkundu@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"post\": \"6a855d90b0801b3c55cc13dc\",\r\n    \"comment\": \"This is a very useful post. Thanks for sharing!\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profileUpdate",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Krishna",
+                  "type": "text",
+                  "uuid": "5f3c6d79-1dfd-4bea-b27a-f0daed56f4fc"
+                },
+                {
+                  "key": "bio",
+                  "value": "Node.js Backend Developer",
+                  "type": "text",
+                  "uuid": "819e2168-c80d-411c-8a39-57971b58acaf"
+                },
+                {
+                  "key": "profilePicture",
+                  "type": "file",
+                  "uuid": "de550fa3-f798-4b95-899c-a01b5188368e",
+                  "src": "/C:/Users/HP/Downloads/profile.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/profileUpdate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "profileUpdate"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "post",
+      "item": [
+        {
+          "name": "createPost",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Understanding Express.js\",\r\n    \"content\": \"Express.js is a lightweight and flexible Node.js web application framework.\",\r\n    \"category\": \"6a855bd4b0801b3c55cc13da\",\r\n    \"tags\": [\r\n        \"Node.js\",\r\n        \"Express.js\",\r\n        \"Backend\"\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/createPost",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "createPost"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllPosts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyODk0MywiZXhwIjoxNzg3MTMyNTQzfQ.fYXoAuvYmbSTu8YCeE7UHdFEwZuFlciSRYF54GOjrYA",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/getAllPosts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "getAllPosts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getPostById",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/getPostById/6a855d90b0801b3c55cc13dc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "getPostById",
+                "6a855d90b0801b3c55cc13dc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getPopularPosts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/getPopularPosts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "getPopularPosts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updatePost",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyODk0MywiZXhwIjoxNzg3MTMyNTQzfQ.fYXoAuvYmbSTu8YCeE7UHdFEwZuFlciSRYF54GOjrYA",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Complete Introduction to Node.js\",\r\n    \"content\": \"Node.js is a powerful JavaScript runtime used to build scalable backend applications.\",\r\n    \"category\": \"6a855bd4b0801b3c55cc13da\",\r\n    \"tags\": [\r\n        \"Node.js\",\r\n        \"Express.js\",\r\n        \"Backend\"\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/updatePost/6a855d46b0801b3c55cc13db",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "updatePost",
+                "6a855d46b0801b3c55cc13db"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "item": [
+        {
+          "name": "createComment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"post\": \"6a855d90b0801b3c55cc13dc\",\r\n    \"comment\": \"You need to modify your post.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/createComment",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "createComment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "postCommentCheck",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/post/6a855d90b0801b3c55cc13dc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "post",
+                "6a855d90b0801b3c55cc13dc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateComment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\": \"This is a very useful post. Thanks!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/updateComment/6a85611af01aa54fc0d29edb",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "updateComment",
+                "6a85611af01aa54fc0d29edb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteComment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"post\": \"6a855d90b0801b3c55cc13dc\",\r\n    \"comment\": \"This is a very useful post. Thanks for sharing!\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/deleteComment/6a85631df01aa54fc0d29edc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "deleteComment",
+                "6a85631df01aa54fc0d29edc"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "category",
+      "item": [
+        {
+          "name": "create-category",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Web Development\",\r\n    \"description\": \"Frontend and backend web development tutorials..\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5005/api/createCategory",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "createCategory"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCategories",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyNDU5NiwiZXhwIjoxNzg3MTI4MTk2fQ.WTzEWjsqnCY4SQ9a-vIKjmcPLYOSolnAvazwDOhMKXw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/getCategories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "getCategories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "with-posts",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODU1YjU0YjA4MDFiM2M1NWNjMTNkOCIsImVtYWlsIjoia3BrdW5kdUB5b3BtYWlsLmNvbSIsImlhdCI6MTc4NzEyODk0MywiZXhwIjoxNzg3MTMyNTQzfQ.fYXoAuvYmbSTu8YCeE7UHdFEwZuFlciSRYF54GOjrYA",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5005/api/with-posts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5005",
+              "path": [
+                "api",
+                "with-posts"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
